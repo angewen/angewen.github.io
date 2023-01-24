@@ -76,7 +76,7 @@ body {
 
 
 .dark button {
-    background-color: var(--color-black);
+    background-color: var(--color-primary);
 }
 .dark button:hover {
     background-color: var(--color-primary);
@@ -226,6 +226,7 @@ hr {
 
 .socials-heading {
     margin-top: 10rem;
+    animation: socials 3s ease-out;
 }
 .card_socials {
     display: flex;
@@ -242,8 +243,12 @@ hr {
 
 
 .about-me {
-    margin-top: 8rem;
+    padding-top: 8rem;
     animation: socials 3s ease-out;
+}
+
+.about-me-text {
+    line-height: 2rem
 }
 
 
@@ -264,7 +269,7 @@ hr {
 }
 
 .hobbies {
-    margin-top: 8rem;
+    padding-top: 8rem;
     animation: socials 3s ease-out;
 }
 
@@ -358,71 +363,99 @@ hr {
 
 .cake-flip-text {
     height: 8rem;
+    width: 8rem;
     text-align: center;
     font-size: 1rem;
     align-items: center;
-    padding-top: 2rem;
+    padding-top: 1.8rem;
 } 
 
 .crochet {
-    margin-top: 30rem;
+    margin-top: 20rem;
+    padding-top: 10rem;
+    padding-bottom: 30rem;
     animation: socials 3s ease-out;
+
 }
 
-.slider-wrapper {
-	position: relative;
-	max-width: 30rem;
-	margin: 1rem 0;
+
+.slidershow {
+    position: absolute;
+    margin-top:108rem;
+    width: 30rem;
+    height: 30rem;
+    max-width: 30rem;
+    overflow: hidden;
+    border-radius: 50%;
+
+}
+.middle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.navigation {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+}
+.bar {
+    width: 0.8rem;
+    height: 0.8rem;
+    border-radius: 50%;
+    border: 3px solid var(--color-white);
+    margin: 6px;
+    cursor: pointer;
+    transition: 0.4s;
 }
 
-.slider {
-	display: flex;
-	aspect-ratio: 16 / 16;
-	overflow-x: auto;
-	scroll-snap-type: x mandatory;
-	scroll-behavior: smooth;
-	border-radius: 50%;
-	-ms-overflow-style: none;
-	scrollbar-width: none;
-}
 
-.slider::-webkit-scrollbar {
-	display: none;
+.bar:hover {
+    background: var(--color-white);
 }
-
-.slider img {
-	flex: 1 0 100%;
-	scroll-snap-align: start;
-	object-fit: cover;
+  
+input[name="r"] {
+      position: absolute;
+      visibility: hidden;
 }
-
-.slider-nav {
-	display: flex;
-	column-gap: 1rem;
-	position: absolute;
-	bottom: 1.25rem;
-	left: 50%;
-	transform: translateX(-50%);
-	z-index: 1;
+  
+.slides {
+    width: 500%;
+    height: 100%;
+    display: flex;
 }
-
-.slider-nav a {
-	width: 0.5rem;
-	height: 0.5rem;
-	border-radius: 50%;
-	background-color: var(--color-white);
-	opacity: 0.90;
-	transition: opacity ease 250ms;
+  
+.slide {
+    width: 20%;
+    transition: 0.6s;
 }
-
-.slider-nav a:hover {
-	opacity: 1;
+.slide img {
+    width: 100%;
+    height: 100%;
 }
-
-.slide-nav a:active {
-    opacity: 1;
+  
+#r1:checked ~ .s1 {
+    margin-left: 0;
 }
+#r2:checked ~ .s1 {
+    margin-left: -20%;
+}
+#r3:checked ~ .s1 {
+    margin-left: -40%;
+}
+#r4:checked ~ .s1 {
+    margin-left: -60%;
+}
+#r5:checked ~ .s1 {
+    margin-left: -80%;
+}
+  
 
+
+/*  */
 .bg-flowers {
     position: absolute;
     z-index: -1;
@@ -464,6 +497,7 @@ td {
     background-repeat: repeat-x;
     width: 100%;
     height: 200px;
+    animation: socials 3s ease-out;
 }
 
 .lavenders {

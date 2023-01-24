@@ -29,16 +29,15 @@
     </script>
 
 	<div id="navbar">
-		<a class="active" href="#home">Home</a>
-		<a href="#aboutme">About Me</a>
-		<a href="#cakes">Cakes</a>
-		<a href="#crochet">Crochet</a>
-		<a href="#socials">Socials</a>
+		<a class="nav-link" href="#home">Home</a>
+		<a class="nav-link" href="#aboutme">About Me</a>
+		<a class="nav-link" href="#cakes">Cakes</a>
+		<a class="nav-link" href="#crochet">Crochet</a>
+		<a class="nav-link" href="#socials">Socials</a>
 
-		<p class="dark-note">dark mode</p>
 		<div class="dark-mode">
 			<button onclick="myFunction()">
-				<img src="./assets/8.png" alt="moon" class="moon" width="40px" height="40px">
+				<img src="./assets/moon.png" alt="moon" class="moon" id="moon-img" width="40px" height="40px">
 			</button>	
 		</div>
 	</div>
@@ -99,7 +98,7 @@
 					<br>
 					<h2 class="card_info-description">welcome to my profile page</h2>
 					<br>
-					<p>(hint: hover over circles)</p>
+					<p>(don't forget to try dark mode!)</p>
 				</div>
 
 				<br>
@@ -109,7 +108,7 @@
 					<br>
 					<hr>
 					<br>
-					<p>
+					<p class="about-me-text">
 						<b>Degree:</b> 2nd Year Computer Science
 						<br>
 						<b>MBTI:</b> ISFJ
@@ -220,23 +219,43 @@
 					<h2>some things i've crocheted :)</h2>
 					<br>
 					<hr>	
-					<div class="slider-wrapper">
-						<div class="slider">
-							<img id="slide-1" src="assets/totoro.jpg" alt="totoro">
-							<img id="slide-2" src="assets/bees.jpg" alt="bees" />
-							<img id="slide-3" src="assets/whale.jpg" alt="whale" />
-							<img id="slide-4" src="assets/pinkbee.jpg" alt="pink bee" />
-							<img id="slide-5" src="assets/beenie.jpg" alt="beenie" />
+					<div class="slidershow middle">
+
+						<div class="slides">
+							  <input type="radio" name="r" id="r1" checked>
+							<input type="radio" name="r" id="r2">
+							<input type="radio" name="r" id="r3">
+							<input type="radio" name="r" id="r4">
+							<input type="radio" name="r" id="r5">
+							<div class="slide s1">
+								<img src="assets/totoro.jpg" alt="totoro">
+							</div>
+							<div class="slide">
+								<img src="assets/bees.jpg" alt="bees">
+							</div>
+							<div class="slide">
+								<img src="assets/whale.jpg" alt="whale">
+							</div>
+							<div class="slide">
+								<img src="assets/pinkbee.jpg" alt="pinkbee">
+							</div>
+							<div class="slide">
+								<img src="assets/beenie.jpg" alt="beenie">
+							</div>
 						</div>
-						<div class="slider-nav">
-							<a href="#slide-1"></a>
-							<a href="#slide-2"></a>
-							<a href="#slide-3"></a>
-							<a href="#slide-4"></a>
-							<a href="#slide-5"></a>
+				  
+						<div class="navigation">
+						  <label for="r1" class="bar"></label>
+						  <label for="r2" class="bar"></label>
+						  <label for="r3" class="bar"></label>
+						  <label for="r4" class="bar"></label>
+						  <label for="r5" class="bar"></label>
 						</div>
-					</div>				
+					  </div>			
 				</div>
+
+
+
 
 
 
@@ -289,6 +308,39 @@
 			}
 		}
 	</script>
+
+	<script>
+		const navLinks = document.querySelectorAll('.nav-link');
+
+		navLinks.forEach(link => {
+			link.addEventListener('click', e => {
+				e.preventDefault();
+				const targetId = e.target.getAttribute('href');
+
+				const targetElement = document.querySelector(targetId);
+
+				targetElement.scrollIntoView({ behavior: 'smooth' });
+			});
+		});
+
+	</script>
+	<script>
+		const image = document.getElementById('moon-img');
+
+		let currentImage = 'assets/moon.png';
+		image.src = currentImage;
+
+		image.addEventListener('click', e => {
+			if (currentImage === 'assets/moon.png') {
+				currentImage = 'assets/sun.png';
+				e.target.src = currentImage;
+			} else {
+				currentImage = 'assets/moon.png';
+				e.target.src = currentImage;
+			}
+		});
+	</script>
+
 </body>
 </html>
 
