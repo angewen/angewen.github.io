@@ -436,6 +436,14 @@ hr {
 .table {
     max-width: 100%;
     width: 100%;
+    table-layout: fixed;
+    
+}
+
+td { 
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+    word-wrap: break-word;
 }
 
 .flower {
