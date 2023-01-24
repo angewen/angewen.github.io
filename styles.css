@@ -117,13 +117,15 @@ h2 {
     line-height: 1.3rem;
 }
 
-/* button */
 .dark-mode{
     margin-top: 5;
     margin-left: auto;
     margin-right: 5rem;
     float: right;
 }
+
+
+
 button {
     background-color: var(--color-primary);
     margin: 3px 18px;
@@ -144,7 +146,6 @@ button:hover {
     animation: bounce .3s infinite alternate;
 }
 
-/* Nav bar */
 #navbar {
     background-color: rgb(241, 235, 244);
     color: var(--color-darker);
@@ -153,8 +154,6 @@ button:hover {
     z-index: 1;
 }
   
-
-/* make freeze, transparent when not at top */
 #navbar a {
     float: left;
     display: block;
