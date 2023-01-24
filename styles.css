@@ -433,6 +433,11 @@ hr {
     animation: socials 3s ease-out
 }
 
+.table {
+    max-width: 100%;
+    width: 100%;
+}
+
 .flower {
     margin: 11rem 12rem;
     animation: rotation 10s infinite linear;
